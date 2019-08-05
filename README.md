@@ -30,6 +30,12 @@ daydayUp with dataWhale
 4. git status可以查看当前状态。
 
 
+# 从云端下载最新版本到本地，然后合并本地项目的方法
+1. 输入“ git fetch origin master:temp ”, 表示从远程的origin仓库的master分支下载到本地上所新建的temp分支；
+2. 输入“ git diff temp ” 查看temp分支与本地的当前分支的区别
+   (可以用git status命令查看当前分支，“git checkout 分支名称”，来切换分支)
+3. 输入“ git merge temp ” 则temp分支与本地当前分支可合并，此时本地代码就完成了更新；也可以git branch -d temp 删除此分支；
+4. 本地再新建内容后，依旧git add 文件名然后git commit -m "备注"后完成本地的添加；最后 git push -u origin master，完成本地代码的上传工作。
 
 
 
