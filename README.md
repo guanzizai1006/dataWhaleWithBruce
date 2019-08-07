@@ -38,4 +38,11 @@ daydayUp with dataWhale
 4. 本地再新建内容后，依旧git add 文件名然后git commit -m "备注"后完成本地的添加；最后 git push -u origin master，完成本地代码的上传工作。
 
 
+# 往云端添加整个文件夹
+1. 注意哦，git此般操作，是对单个文件的大小有限制的，即小于100M，否则会报错；
+2. 若直接同步空的文件夹，是没反应的；所以 需要在文件层级里面添加至少一个文件；
+3. 输入“ git add 文件夹”
+4. 输入“ git commit -m "内容" ”
+5. 输入“ git push -u origin master ”，即可把文件夹下所属的文件一并提交~
+
 
