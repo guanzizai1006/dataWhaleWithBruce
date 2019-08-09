@@ -1,3 +1,5 @@
+# 这里我把训练代码给注释了，用于从数据集中提取图片出来。
+
 # 导入包
 # basic
 import matplotlib.pyplot as plt # plt 用于显示图片
@@ -131,7 +133,7 @@ model = ConvNet(num_classes).to(device)
 # 定义损失函数和优化器
 criterion = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(model.parameters(), lr = learning_rate)
-
+"""
 total_step = len(train_loader)
 for epoch in range(num_epochs):
     for i, (images, labels) in enumerate(train_loader):
@@ -150,5 +152,17 @@ for epoch in range(num_epochs):
 
         if (i+1) % 100 == 0:
             print('Epoch [{}/{}], Step [{}/{}], Loss: {:.4f}'.format(epoch+1, num_epochs, i+1, total_step, loss.item()))
+"""
 
+
+# 保存数据集的图片到本地，供Task2中完成测试
+data_iter = iter(train_loader)
+images, labels = next(data_iter)
+# 取batch中的一张图像
+idx = 11
+image = images[idx].numpy()
+image = np.transpose(image, (1, 2, 0))
+plt.imshow(image)
+classes[labels[idx].numpy()]
+cv.imwrite("../Task2/imgFromDataSet.png", image)
 
